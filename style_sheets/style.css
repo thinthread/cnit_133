@@ -1,0 +1,200 @@
+/* Starting point clean margin and padding*/
+*{
+	margin: 0;
+	padding: 0;
+}
+
+html, body{
+	height: 100%;
+}
+
+/* Global vars - fonts & colors */
+:root{
+	--light-gray-font-clr: #363649;
+	--teal-font-clr: #599185;
+	--all-over-font: " Gill Sans", sans-serif;
+}
+
+/* Font color & family - h1 & footer*/
+h1, h2, h4, h6, p, 
+{
+	color: var(--light-gray-font-clr);
+	font-family: var(--all-over-font);
+}
+
+body{	
+	margin: 0 0 0;
+	padding: 10px 0;
+	background-color: #CCCCCC;
+}
+
+
+/* nav h tags layout stuff, heading/ banner text*/
+h1, h2, h4, h6, nav{
+	text-align: center;
+	margin: 0 0 0;
+	padding: 10px 0;
+}
+
+
+h1{
+	text-transform: uppercase;
+	text-shadow: 2px 2px var(--teal-font-clr);
+}
+
+
+h5{
+	text-align: center;
+	font-size: 15px;
+}
+
+
+
+/* Paragraph, portfolio page link alignment stuff */
+p, .image_caption, #keyword_list ul{
+
+	max-width: 700px;
+	margin: auto;
+}
+
+.image_caption, #keyword_list{
+	text-align: center;
+}
+
+p{
+	text-align: left;
+}
+
+#keyword_list li{
+	list-style-type: none;
+}
+
+
+/* additional nav, assignments page, portfolio link animaiton and design stuff. */
+
+nav ul{
+	margin: 0 2px;
+	padding: 0;
+
+}
+
+nav ul li{
+	display: inline-block;
+	text-align: center;
+	position: relative;
+}
+
+
+
+nav a{
+	font-family: var(--all-over-font);
+	text-transform: lowercase;
+	margin: 4px;
+	padding: 10px 10px;
+	text-decoration: none;
+	width: 100px;
+	height: 20px;
+	border-radius: 40px; 
+	line-height: 20px;
+	border: 3px solid #458281;
+	display: block;
+	color: #458281;
+	position: relative;
+	overflow: auto;
+	background: transparent;
+}
+
+nav a:before{
+	content: '';
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	background: var(--teal-bg-clr);
+	top: -100%;
+	left: 0;
+	z-index: -1;
+}
+
+nav a:after{
+	content: '';
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	background: var(--teal-bg-clr);
+	top: -100%;
+	left: 0;
+	z-index: -1;
+}
+
+nav a:hover{
+	color: #fff; /* text white when hover over*/
+}
+
+nav a:hover:before{
+	top: 0;
+}
+
+nav a:hover:after{
+	top: 0;
+}
+
+/*pulldown menu stuff, assigments page - changed dropdown for acceibility*/
+nav ul ul{
+	position: absolute;
+	display: none;
+}
+
+/*accessible dropdown featture*/
+nav ul li:hover > ul,
+nav ul li:focus-within > ul{
+	display: block;
+	
+}
+
+
+/* image layout stuff*/
+/* main body page container*/
+.page_container{
+	min-height: 100%;
+}
+
+/*contact me page - image of me*/
+.image_me{
+	
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	border-radius: 500px;
+  	padding: 20px;
+  	width: 300px;
+  	height: 300px;
+
+}
+
+/* Footer design stuff, and other outside links here */
+footer ul {
+	position: relative;
+	height: 100px;
+	margin-top: -100px;
+	clear:both;
+	text-align: center;
+}
+
+footer a {
+	
+	font-family: var(--all-over-font);
+	color: var(--light-gray-font-clr);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
