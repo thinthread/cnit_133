@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>CNIT 133 Homework 2, Basic Operations - Part2</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="description" content="Stephanie Boyette - CNIT 133 Homework JS Project">
+	<meta name="viewport" content="width-device-width, initial-scale-1.0">
+	<link rel="stylesheet" type="text/css" href="../style_sheets/style_hw2_subparts.css">
+	<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+	<script id="form-part2" type="text/javascript">
+
+		function runProcess(){
+			// Ask user for 3 Integers, do checks on user input, if good data - do math, return math results to user
+
+			// user input data
+			var userInputA, userInputB, userInputC;
+			
+			// parsed int variables to check
+			var intA, intB, intC;
+			
+			// arrays for user data input collection, collect clean data 
+			var userDataArray, cleanDataArray; 
+			
+			//math variables
+			var sum, average, product, minInt, maxInt;
+			
+			// IDs to place message in user input box
+			var userNum1, userNum2, userNum3;
+
+			// parsed int variables to check
+			userInputA = document.forms["myForm2"].elements["numA"].value;
+			userInputB = document.forms["myForm2"].elements["numB"].value;
+			userInputC = document.forms["myForm2"].elements["numC"].value;
+
+			intA = parseInt(userInputA);
+			intB = parseInt(userInputB);
+			intC = parseInt(userInputC);				
+
+			// arrays for user data input collection - pre data int check
+			userDataArray = [intA, intB, intC];  
+			
+			// collect clean data Integers only to do math with
+			cleanDataArray = []; 
+
+			// do data check .isInteger(), message user if not int
+			for (var i = 0; i < userDataArray.length; i++){
+				if (Number.isInteger(userDataArray[i]) === true){
+					cleanDataArray.push(userDataArray[i]);// append int to cleanDataArray	
+					if(cleanDataArray.length === userDataArray.length){
+						sum = 0;
+						for (var i=0; i < cleanDataArray.length; i++){
+								sum = sum + cleanDataArray[i];
+						}
+						average = sum / userDataArray.length;
+						
+						product = 1;
+						for (var i=0; i < cleanDataArray.length; i++){
+							product = product * cleanDataArray[i];
+						}
+						minInt = Math.min.apply(null, cleanDataArray);
+						maxInt = Math.max.apply(null, cleanDataArray);
+					}
+				}else{return false;}// return false so nothing prints out to user
+
+				} 
+			// collect math results, save to a variable 
+			document.forms["myForm2"].elements["resultSum"].value = sum;
+			document.forms["myForm2"].elements["resultAverage"].value = average;
+			document.forms["myForm2"].elements["resultProduct"].value = product;
+			document.forms["myForm2"].elements["resultMin"].value = minInt;
+			document.forms["myForm2"].elements["resultMax"].value = maxInt;
+			}	
+		
+		function oopsMessage(){
+			// give an error message when user imputes NaN, empty string or a null value
+			// User input
+			let InputA, InputB, InputC;
+			// collect input in array for easy handeling
+			let userFieldInputArray;
+			// oopsMessage error variable
+			var error = document.getElementById("error")
+
+			// collect and parse ints
+			InputA = document.forms["myForm2"].elements["numA"].value;
+			InputB = document.forms["myForm2"].elements["numB"].value;
+			InputC = document.forms["myForm2"].elements["numC"].value;
+
+			intA = parseInt(InputA);
+			intB = parseInt(InputB);
+			intC = parseInt(InputC);
+
+			userFieldInputArray = [intA, intB, intC];
+			
+			for (var i = 0; i < userFieldInputArray.length; i++){
+				if ( userFieldInputArray.includes(NaN) || userFieldInputArray[i] == null || userFieldInputArray[i] == "" && userFieldInputArray[i] != 0){
+					error.textContent = "Oops! Please enter three valid integers.";
+					error.style.color = "#911c36";
+				}else{
+					error.textContent = "";
+				}
+			}
+		}	
+		
+		$(document).ready(function(){
+			// Click to Fade Results button
+			$("#fadeTo").click(function(){
+				$("#Sum").fadeTo("slow", 0.4);
+				$("#Average").fadeTo("slow", 0.4);
+				$("#Product").fadeTo("slow", 0.4);
+				$("#Minimum").fadeTo("slow", 0.4);
+				$("#Maximum").fadeTo("slow", 0.4);
+			});
+		});
+	</script>
+</head>
+<body>
+	<h1>CNIT 133 Homework 2, Basic Operations - Part2</h1>
+	<ul id="container-links">
+		<li><a href="hw2_part1.html">Homework_2_Part1</a></li>
+		<li><a href="hw2_part2.html">Homework_2_Part2</a></li>
+		<li><a href="../assignments.html">Assignments</a></li>
+		<li><a href="../index.html">Home</a></li>
+	</ul>
+	<h3 id=title-part1>CALC program</h3>
+	<div id="container-part2">
+		<p>
+			In this section we will be doing a bit of math calculating fun. Please enter in the first three fields an integer. This mini calculating program will return the resulting values in the following fields.
+		</p>
+		<br>
+		<br>
+		<div id="main-content-part2">
+			<section id="body">
+				<form name="myForm2">
+					<table>
+						<tr>
+							<td>First Number:</td>
+							<td><input type="text" name="numA" size="10" id="userNum1" placeholder="Integer only"></td>
+						</tr>
+						<tr>
+							<td>Second Number:</td>
+							<td><input type="text" name="numB" size="10" id="userNum2" placeholder="Integer only"></td>
+						</tr>
+						<tr>
+							<td>Third Number:</td>
+							<td><input type="text" name="numC" size="10" id="userNum3" placeholder="Integer only"></td>
+						</tr>
+						<tr>
+					        <td>Sum is:</td> 
+					        <td><input type="text" name="resultSum" id="Sum" size="10" readonly></td>
+				      	</tr>
+				      	<tr>
+					        <td>Average is:</td> 
+					        <td><input type="text" name="resultAverage" id="Average" size="10" readonly></td>
+				      	</tr>
+				      	<tr>
+					        <td>Product is:</td> 
+					        <td><input type="text" name="resultProduct" id="Product" size="10" readonly></td>
+				      	</tr>
+				      	<tr>
+					        <td>Minimum Integer is:</td> 
+					        <td><input type="text" name="resultMin" id="Minimum" size="10" readonly></td>
+				      	</tr>
+				      	<tr>
+					        <td>Maximum Integer is:</td> 
+					        <td><input type="text" name="resultMax" id="Maximum" size="10" readonly></td>
+				      	</tr>
+					</table>
+					<br>
+					<span id="error"></span>
+					<br>
+					<br>
+					<input type="button" onclick="runProcess(); oopsMessage()" value="SUBMIT">
+					<button type="button" name="button" id="fadeTo">Click to Fade Results</button>
+					<input type="reset" name="RESET" onclick="window.location.reload();">
+				</form>
+			</section>
+		</div>	
+	</div>
+</body>
+</html>

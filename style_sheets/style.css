@@ -71,7 +71,6 @@ p{
 
 
 /* additional nav, assignments page, portfolio link animaiton and design stuff. */
-
 nav ul{
 	margin: 0 2px;
 	padding: 0;
@@ -83,7 +82,6 @@ nav ul li{
 	text-align: center;
 	position: relative;
 }
-
 
 
 nav a{
@@ -138,7 +136,7 @@ nav a:hover:after{
 	top: 0;
 }
 
-/*pulldown menu stuff, assigments page - changed dropdown for acceibility*/
+/*dropdown menu stuff, assigments page - changed dropdown for acceibility*/
 nav ul ul{
 	position: absolute;
 	display: none;

@@ -1,0 +1,109 @@
+/* Homework 2 and 3,subparts only parts 1, 2 & 3
+ Starting point clean margin and padding.
+*/
+*{
+	margin: 0;
+	padding: 0;
+}
+html, body{
+	height: 100%;
+}
+:root{
+	--all-over-font: " Gill Sans", sans-serif;
+}
+
+input{
+	text-align: right;
+}
+
+body{
+	background-color: #458281;
+}
+
+h1{
+	padding-top: 50px;
+	padding-left: 20px;
+	font-family: var(--all-over-font);
+}
+
+#body{ 
+	width: 550px; margin: 0px auto;
+}
+
+/* Paragraph alignment stuff */
+p{
+	max-width: 700px;
+	margin: auto;
+	text-align: left;
+}
+
+#container-links{
+	/*display: flex;*/
+	/*flex-direction: row;*/
+	/*width: 400px;*/
+	/*margin: 10px*/
+	/*text-align: center;*/
+	text-align: center;
+	margin: 0 0 0;
+	padding: 30px 0;
+}
+
+#container-links ul{
+	margin: 0 2px;
+	padding: 0;
+}
+#container-links li{
+	display: inline-block;
+	text-align: center;
+}
+#container-links a{
+	font-family: var(--all-over-font);
+	color: #911c36;
+	font-weight: normal;
+	padding: 10px 5px;
+	text-decoration: none;
+}
+
+
+/*hw2_part1.html, only*/
+/*#js-fun{
+}*/
+
+#red-letters{
+	font-family: "Times New Roman";
+	font-style: bold;
+	color: red;
+}
+
+#blue-numbers{
+	font-family: "Arial";
+	color: blue;
+}
+
+#green-numbers{
+	font-family: "Impact";
+	font-style: italic;
+	color: green;
+}
+
+#red-letters, #blue-numbers,
+#green-numbers{
+	margin: 0 2px;
+	padding: 0;
+	display: inline-block;
+	text-align: center;
+}
+
+#container-part1{
+	margin: 0 2px;
+	padding: 0;
+	text-align: center;	
+}
+
+#title-part1{
+	font-family: var(--all-over-font);
+	padding-top: 30px;
+	padding-bottom: 20px;
+	text-align: center;		
+}
+
